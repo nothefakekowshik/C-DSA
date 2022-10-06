@@ -24,11 +24,13 @@ void init_code()
     fast_io;
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("outputstl.txt", "w", stdout);
     #endif 
 }
 int main()
 {
 	init_code();
+	pair<int,int> p ={1,2};
+	cout<<p.first;
 	return 0;
 }

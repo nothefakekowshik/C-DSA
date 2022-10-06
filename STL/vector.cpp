@@ -24,11 +24,13 @@ void init_code()
     fast_io;
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("outputstl.txt", "w", stdout);
     #endif 
 }
 int main()
 {
 	init_code();
+	vector<int> ve (5,0);
+	pve(ve);
 	return 0;
 }

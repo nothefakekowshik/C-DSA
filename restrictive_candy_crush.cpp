@@ -29,37 +29,40 @@ void init_code()
 }
 int main()
 {
-    init_code();
-    ri(t);
-    while(t-->0)
+	init_code();
+	string s = "geegsforgeeeks";
+	int k=2;
+	stack<pair<char,int>> st;
+    for(auto i : s)
     {
-        
-        ri(n);
-        ri(k);
-        vi a;
-        for(int i=0;i<n;i++)
+        if(st.empty()==true)
         {
-            ri(temp);
-            a.pb(temp);
+            st.push({i,1});
         }
-        for(int i=0;i<n-1;i++)
+        else if(st.empty()==false and st.top().first==i)
         {
-            for(int j=i+1;j<n;j++)
+            st.push({i,st.top().second+1});
+        }
+        else if(st.empty()==false and st.top().first!=i)
+        {
+            st.push({i,1});
+        }
+        if(st.empty()==false and st.top().second >= k)
+        {
+            char ch = st.top().first;
+            while(st.top().first==ch)
             {
-                if((i+1%k) == (j+1%k))
-                {
-                    if(a[j] < a[i])
-                    {
-                        cout<<a[i]<<"#"<<endl;
-                        int temp=a[i];
-                        a[i]=a[j];
-                        a[j]=temp;
-                    }
-                }
+                st.pop();
             }
         }
-        pve(a);
-        cout<<endl;
     }
-    return 0;
+    string ans="";
+    while(st.empty()==false)
+    {
+        ans+=st.top().first;
+        st.pop();
+    }
+    reverse(ans.begin(),ans.end());
+    cout<<ans;
+	return 0;
 }

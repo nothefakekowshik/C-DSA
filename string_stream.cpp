@@ -30,5 +30,14 @@ void init_code()
 int main()
 {
 	init_code();
+	string msg = "hello im kowshik";
+	string temp;
+	stringstream ss(msg);
+	while(ss >> temp)
+	{
+		reverse(all(temp));
+		cout<<temp<<" ";
+	}
+	cout<<endl;
 	return 0;
 }

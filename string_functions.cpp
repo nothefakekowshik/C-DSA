@@ -63,7 +63,7 @@ int main()
  //    c(name.find('A'));
     string s="kowshik";
     cout<<s<<endl;
-    cout<<s.substr(0,2);
+    cout<<s.substr(2,1);
     cout<<endl;
     cout<<s.substr(2);
 	return 0;
