@@ -1,0 +1,8 @@
+1. Binary number conversion
+2. Operators ( and, or ,xor, not, shift)
+3. swapping 2 numbers
+4. check if ith bit is set or not.
+5. extract ith bit
+6. set the ith bit
+7. clear the ith bit
+8. toggle the ith bit
