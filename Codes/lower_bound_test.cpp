@@ -31,16 +31,17 @@ int main()
 {
 	init_code();
 	vector<int> a={1,2,3,4,7,9};
-	vector<int> b={0,1,1,1,2,4};
+	vector<int> b={0,1,1,1,2,15};
+	cout<<lower_bound(all(b),2) - b.begin();
+	cout<<endl;
 	cout<<upper_bound(all(b),2) - b.begin();
 	cout<<endl;
-	cout<<lower_bound(all(b),2) - b.begin();
-	cout<<endl;cout<<endl;
 	auto it = *upper_bound(all(b) , 2);
 	cout<<it;
 	cout<<endl;
-	cout<<*lower_bound(all(b),2);
-	cout<<endl;cout<<endl;
+	auto itt = *lower_bound(all(b) , 2);
+	cout<<itt;
+	cout<<endl;
 	cout<<"----------------"<<endl;
 	vector<int> v{ 10, 20, 30, 30, 30, 40, 50 };
 	cout<<lower_bound(all(v) , 30) - v.begin();
@@ -49,3 +50,18 @@ int main()
 	cout<<iit;
 	return 0;
 }
+
+/*
+ lower_bound() - x.begin() -> 
+ 1. gives you the exact index if the element is PRESENT.
+ 2. gives you the index TO INSERT if the element is NOT PRESENT.
+
+
+
+lower_bound() ->
+1. same as above but this doesn't return indexes, it returns the elements instead.
+
+
+basically, LB says greater or equal but UB says only greater.
+
+*/
