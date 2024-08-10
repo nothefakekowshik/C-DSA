@@ -29,9 +29,9 @@ void init_code()
 }
 struct helper 
 {
-    bool operator()(vector<int> &a, vector<int> &b)
+    bool operator()(pair<int,int> a, pair<int,int> b)
     {
-        return a[1] < b[1];
+        return a.second < b.second;
     }
 };
 
@@ -72,12 +72,18 @@ int main()
 	cout<<endl;
 
 	vector<pair<int,int>> pp = p;
-	sort(all(v), helper()); // this shit is called Functors.
-	for(auto i : v) {
-		for(auto j : i) {
-			cout<<j<<" ";
-		}
+	sort(all(pp), helper()); // this shit is called Functors.
+	for(auto it : pp) {
+		cout<<it.first<<"->"<<it.second;
 		cout<<endl;
 	}
 	return 0;
 }
+
+/*
+
+In C++, 
+a functor (or function object) is an object that can be treated as though it is a function. 
+This is made possible by overloading the operator() in a class or struct, allowing instances of that class or struct to be invoked like a function.
+
+*/
