@@ -27,13 +27,14 @@ void init_code()
     freopen("output.txt", "w", stdout);
     #endif 
 }
-// struct helper 
-// {
-//     bool operator()(vector<int> &a, vector<int> &b)
-//     {
-//         return a[1] < b[1];
-//     }
-// }; // this doesnt work
+struct helper 
+{
+    bool operator()(vector<int> &a, vector<int> &b)
+    {
+        return a[1] < b[1];
+    }
+};
+
 bool sortvector(vector<int> a, vector<int> b)
 {
  return a[1] < b[1]; 
@@ -47,7 +48,7 @@ int main()
 {
 	init_code();
 	vector<vector<int>> v ={{1, 3}, {2, 6}, {8, 10},{2, 4}, {9, 11},{17, 9}, {15, 18}, {16, 17}};
-	sort(v.begin(),v.end(),  sortvector);
+	sort(all(v),  sortvector);
 	for(auto &i : v)
 	{
 		for(auto &j : i)
@@ -58,6 +59,8 @@ int main()
 	}
 	cout<<endl;
 	cout<<endl;
+
+
 	vector<pair<int,int>> p = {{1, 3}, {2, 6}, {8, 10},{2, 4}, {9, 11},{17, 9}, {15, 18}, {16, 17}};
 	sort(all(p),sortpair);
 	for(auto i : p)
@@ -66,6 +69,15 @@ int main()
 		cout<<endl;
 	}
 	cout<<endl;
+	cout<<endl;
 
+	vector<pair<int,int>> pp = p;
+	sort(all(v), helper()); // this shit is called Functors.
+	for(auto i : v) {
+		for(auto j : i) {
+			cout<<j<<" ";
+		}
+		cout<<endl;
+	}
 	return 0;
 }
